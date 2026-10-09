@@ -1,3 +1,0 @@
-{"event_id":"demo-normal","patient_id":"SYN-0001","timestamp":"2026-10-09T12:00:00+00:00","heart_rate":75,"spo2":98,"signal_score":10}
-{"event_id":"demo-precaucion","patient_id":"SYN-0002","timestamp":"2026-10-09T12:00:01+00:00","heart_rate":105,"spo2":94,"signal_score":50}
-{"event_id":"demo-critico","patient_id":"SYN-0003","timestamp":"2026-10-09T12:00:02+00:00","heart_rate":125,"spo2":89,"signal_score":90}
