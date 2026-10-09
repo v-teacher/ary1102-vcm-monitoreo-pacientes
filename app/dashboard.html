@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="es"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sistema de Monitoreo Remoto de Pacientes Críticos</title>
+<style>body{font:16px system-ui;max-width:1000px;margin:2rem auto;padding:1rem;background:#f4f6f8;color:#172534}input,button{padding:.65rem}table{width:100%;border-collapse:collapse;background:white}td,th{padding:.7rem;border-bottom:1px solid #ddd;text-align:left}pre{white-space:pre-wrap}small{display:block;margin:1rem 0}</style>
+<h1>Sistema de Monitoreo Remoto de Pacientes Críticos</h1>
+<p>ARY1102 · MVP académico · Datos exclusivamente sintéticos.</p>
+<small>La clasificación usa un índice artificial de pruebas. No interpreta condiciones clínicas ni envía alertas a personal real.</small>
+<label>Token de laboratorio <input id="token" type="password" autocomplete="off"></label>
+<button id="refresh">Consultar</button><p id="status" role="status"></p>
+<h2>Mediciones recientes</h2><table><thead><tr><th>Paciente ficticio</th><th>Fecha</th><th>FC sintética</th><th>SpO₂ sintética</th><th>Estado de prueba</th></tr></thead><tbody id="rows"></tbody></table>
+<h2>Alertas simuladas pendientes</h2><pre id="alerts"></pre>
+<script>
+document.getElementById('refresh').onclick=async()=>{
+ const status=document.getElementById('status');
+ try{
+  const headers={Authorization:'Bearer '+document.getElementById('token').value};
+  const responses=await Promise.all(['/events?limit=30','/alerts'].map(p=>fetch(p,{headers})));
+  if(responses.some(r=>!r.ok))throw new Error('Revisa el token o la disponibilidad del servicio.');
+  const [events,alerts]=await Promise.all(responses.map(r=>r.json()));
+  const body=document.getElementById('rows');body.replaceChildren();
+  events.forEach(e=>{const tr=document.createElement('tr');[e.patient_id,e.timestamp,e.heart_rate,e.spo2,e.state].forEach(v=>{const td=document.createElement('td');td.textContent=v;tr.appendChild(td)});body.appendChild(tr)});
+  document.getElementById('alerts').textContent=JSON.stringify(alerts,null,2);
+  status.textContent='Consulta completada. '+events.length+' eventos.';
+ }catch(e){status.textContent=e.message;document.getElementById('rows').replaceChildren();document.getElementById('alerts').textContent=''}
+};
+</script></html>

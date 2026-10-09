@@ -1,0 +1,17 @@
+services:
+  api:
+    build: .
+    ports:
+      - "127.0.0.1:8080:8080"
+    environment:
+      API_TOKEN: ${API_TOKEN:?Configura API_TOKEN antes de iniciar}
+    volumes:
+      - telemetry:/data
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8080/health', timeout=2)"]
+      interval: 10s
+      timeout: 3s
+      retries: 3
+    restart: unless-stopped
+volumes:
+  telemetry:
