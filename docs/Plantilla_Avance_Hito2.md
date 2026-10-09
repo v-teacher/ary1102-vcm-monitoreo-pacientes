@@ -10,6 +10,10 @@ Destinatario/canal institucional: [pendiente de confirmación]. No enviar incomp
 
 [Problema, objetivos y elementos RF/RNF que se abordan; justificar prioridades.]
 
+Contribución propuesta: arquitectura cloud y prueba de concepto de infraestructura,
+sin desarrollo de una aplicación clínica completa. Estado de validación de este
+alcance con coordinación VcM/empresa: [pendiente / validado, con referencia interna].
+
 ## 2. Requerimientos por validar
 
 | RF/RNF | Interpretación | Prioridad | Implementado / diseñado / pendiente | Pregunta |
@@ -19,7 +23,8 @@ Destinatario/canal institucional: [pendiente de confirmación]. No enviar incomp
 ## 3. Arquitectura
 
 [Diagrama depurado y explicación de ingesta, clasificación, datos, consulta, alerta,
-acceso y operación. Distinguir MVP y evolución productiva.]
+acceso y operación. Distinguir diseño de solución, prueba de infraestructura y evolución productiva.
+Los RF orientan el diseño; no todos se implementarán como software.]
 
 ## 4. Avance y pruebas realizadas
 
@@ -27,7 +32,7 @@ acceso y operación. Distinguir MVP y evolución productiva.]
 |---|---|---|---|
 | [solo pruebas realizadas] | [completar] | [completar] | [completar] |
 
-La base local no acredita despliegue/orquestación AWS. No afirmar 99,99% de
+Una propuesta o un diagrama no acredita un despliegue. No afirmar 99,99% de
 disponibilidad, latencia <1 s o 1.000 eventos/s sin pruebas verificables.
 
 ## 5. Preguntas de retroalimentación
@@ -42,7 +47,7 @@ No solicitar datos clínicos, accesos productivos ni umbrales médicos para este
 
 ## 6. Próximo avance
 
-[Evolución orquestación/PaaS→serverless y cambios posibles según feedback.
+[Siguiente validación de arquitectura o infraestructura y cambios posibles según feedback.
 Exposición: fecha pendiente.]
 
 ## Revisión previa

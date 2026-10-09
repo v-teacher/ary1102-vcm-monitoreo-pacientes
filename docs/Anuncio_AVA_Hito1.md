@@ -10,6 +10,14 @@ Cada equipo define sus componentes, servicios y tecnologías. No se entrega una
 arquitectura resuelta ni un generador predefinido. Justifiquen sus decisiones,
 comparen alternativas y distingan diseño, implementación y resultados comprobados.
 
+El trabajo se centra en una **propuesta de arquitectura cloud y una prueba de concepto
+de infraestructura**. Los RF orientan el diseño; no deben programarlos todos.
+No se requiere desarrollar interfaces completas, gestión de pacientes ni reglas clínicas.
+Seleccionen pruebas técnicas que permitan validar sus decisiones con datos sintéticos;
+pueden enviar eventos manualmente, sin construir un generador completo.
+La delimitación se comunicará para validación de la coordinación VcM y la empresa;
+esa aceptación todavía está pendiente.
+
 ## Hitos
 
 1. Presentación y comprensión del caso y de los elementos que se abordarán.

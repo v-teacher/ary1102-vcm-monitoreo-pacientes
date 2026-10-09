@@ -6,6 +6,12 @@ Este repositorio presenta el caso, sus requerimientos y los hitos de trabajo.
 Los estudiantes definen y justifican sus propias propuestas de arquitectura.
 No contiene una solución de referencia, aplicación base ni generador predefinido.
 
+El alcance es una **propuesta de arquitectura cloud con una prueba de concepto
+de infraestructura**, no el desarrollo de una aplicación clínica completa.
+Los requerimientos funcionales orientan el diseño; no se exige programarlos todos.
+Este alcance propuesto debe validarse con la coordinación VcM y la empresa;
+su aceptación aún no está confirmada.
+
 ## Presentación del caso
 
 Una institución de salud necesita mejorar la detección oportuna de anomalías
